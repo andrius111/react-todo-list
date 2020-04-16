@@ -3,9 +3,10 @@ import { Link, useHistory } from 'react-router-dom'
 import { 
   Button, 
   Form, 
-  Jumbotron, 
+  Container, 
   Modal, 
-  Navbar 
+  Navbar,
+  InputGroup
 } from 'react-bootstrap'
 
 import TaskModel from '../../models/task.model'
@@ -45,16 +46,18 @@ export default () => {
         variant="dark"
       >
         <Navbar.Brand>New Task</Navbar.Brand>
-      </Navbar>
+      </Navbar><br/>
 
-      <Jumbotron>
+      <Container>
         <Form
           validated={ validForm }
           noValidate
           onSubmit={ handleSubmit }
         >
-          <Form.Group>
-            <Form.Label>Inform the task's name</Form.Label>
+          <InputGroup size="lg">
+            <InputGroup.Prepend>
+              <InputGroup.Text id="inputGroup-sizing-lg">Task Name</InputGroup.Text>
+            </InputGroup.Prepend>
             <Form.Control 
               type="text"
               minLength="5"
@@ -66,9 +69,9 @@ export default () => {
             />
 
             <Form.Control.Feedback type="invalid">
-              The task must containt at least 5 characteres.
+              The task must contain at least 5 characteres.
             </Form.Control.Feedback>
-          </Form.Group>
+          </InputGroup><br/>
 
           <Form.Group className="text-center">
             <Button 
@@ -95,7 +98,7 @@ export default () => {
           </Modal.Header>
       
           <Modal.Body>
-            Task successfully registered 
+            Task <strong>{ task }</strong> successfully registered 
           </Modal.Body>
 
           <Modal.Footer>
@@ -107,7 +110,7 @@ export default () => {
             </Button>
           </Modal.Footer>
         </Modal>
-      </Jumbotron>
+      </Container>
     </React.Fragment>
   )
 }

@@ -1,0 +1,22 @@
+body {
+  background-color: var(--dark);
+  color: #fff;
+}
+
+.modal-dialog {
+  color: var(--dark)
+}
+
+.hidden {
+  display: none;
+}
+
+.form-control {
+  background-color: var(--gray);
+  color: #fff;
+}
+
+.form-control:focus {
+  background-color: var(--gray);
+  color: #fff;
+}

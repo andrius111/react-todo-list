@@ -17,6 +17,6 @@ describe('NewTask tests', () => {
     fireEvent.click(getByTestId('btn-add'))
 
     expect(getByTestId('modal')).toHaveTextContent('Success')
-    expect(getByTestId('modal')).toHaveTextContent('Task successfully registered')
+    expect(getByTestId('modal')).toHaveTextContent('Task New task successfully registered')
   })
 })
