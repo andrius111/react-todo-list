@@ -3,6 +3,12 @@ body {
   color: #fff;
 }
 
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .modal-dialog {
   color: var(--dark)
 }
@@ -19,4 +25,16 @@ body {
 .form-control:focus {
   background-color: var(--gray);
   color: #fff;
+}
+
+.page-link {
+  background-color: #474b51;
+  color: #fff;
+  border: 1px solid gray;
+}
+
+.page-item.disabled .page-link {
+  background-color: #606873;
+  color: gray;
+  border: 1px solid gray;
 }

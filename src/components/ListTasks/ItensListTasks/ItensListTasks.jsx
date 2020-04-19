@@ -19,14 +19,17 @@ const ItensListTasks = (props) => {
         data-testid="tr-task"
       >
         <td
-          width="75%"
+          className="text-left"
           data-testid="td-task-name"
           style={{ textDecoration: setCompleted(task) }}
         >
           { task.name }
         </td>  
 
-        <td className="text-right">
+        <td 
+          className="text-right"
+          width="150px"
+        >
           <FinishTask 
             task={ task }
             reloadTasks={ props.reloadTasks }
