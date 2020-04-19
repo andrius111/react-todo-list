@@ -23,7 +23,9 @@ export default () => {
   }
 
   function handleCloseModal() {
-    history.push('/')
+    setShowModal(false)
+    setTask('')
+    setValidForm(false)
   }
 
   function handleSubmit(event) {
@@ -106,7 +108,14 @@ export default () => {
               variant="success"
               onClick={ handleCloseModal }
             >
-              Continue
+              New task
+            </Button>
+
+            <Button 
+              variant="light"
+              onClick={ () => history.push('/') }
+            >
+              Go to the todo list
             </Button>
           </Modal.Footer>
         </Modal>

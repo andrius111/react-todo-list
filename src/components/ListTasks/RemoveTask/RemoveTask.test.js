@@ -4,15 +4,15 @@ import { render, fireEvent, getByTestId } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 
 import TaskModel from '../../../models/task.model'
-import FinishTask from './FinishTask'
+import RemoveTask from './RemoveTask'
 
-describe('FinishTask tests', () => {
+describe('RemoveTask tests', () => {
   const taskName = 'test task'
   const task = new TaskModel(1, taskName, false)
 
   it('must render the component whithout erros', () => {
     render(
-      <FinishTask 
+      <RemoveTask 
         task={ task } 
         reloadTasks={ () => false } 
       />, 
@@ -22,33 +22,32 @@ describe('FinishTask tests', () => {
 
   it('must show the modal', () => {
     const { getByTestId } = render(
-      <FinishTask 
+      <RemoveTask 
         task={ task } 
         reloadTasks={ () => false } 
       />, 
       { wrapper: MemoryRouter }
     )
 
-    fireEvent.click(getByTestId('btn-open-modal'))
-    expect(getByTestId('modal')).toHaveTextContent(taskName)
+    fireEvent.click(getByTestId('btn-show-modal-remove-task'))
+    expect(getByTestId('modal-remove-task')).toHaveTextContent(taskName)
   })
 
-  it('must finish a task', () => {
+  it('must remove one task', () => {
     localStorage['todo-list-tasks'] = JSON.stringify([task])
 
     const { getByTestId } = render(
-      <FinishTask 
+      <RemoveTask 
         task={ task } 
         reloadTasks={ () => false } 
       />, 
       { wrapper: MemoryRouter }
     )
 
-    fireEvent.click(getByTestId('btn-open-modal'))
-    fireEvent.click(getByTestId('btn-finish-task-yes'))
+    fireEvent.click(getByTestId('btn-show-modal-remove-task'))
+    fireEvent.click(getByTestId('btn-remove-task-yes'))
 
     const tasksStorage = JSON.parse(localStorage['todo-list-tasks'])
-
-    expect(tasksStorage[0].completed).toBeTruthy()
+    expect(tasksStorage.length).toBe(0)
   })
 })
