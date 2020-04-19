@@ -4,6 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEdit } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 
+import FinishTask from '../FinishTask/FinishTask'
+
 const ItensListTasks = (props) => {
   function setCompleted(task) {
     return task.completed ? 'line-through' : 'none'
@@ -24,9 +26,17 @@ const ItensListTasks = (props) => {
         </td>  
 
         <td className="text-right">
+          <FinishTask 
+            task={ task }
+            reloadTasks={ props.reloadTasks }
+            className={ task.completed ? 'hidden' : '' }
+          />
+          
           <Link 
             to={ "/update/" + task.id }
             className={ task.completed ? 'hidden' : 'btn btn-warning btn-sm' }
+            style={{ marginLeft: '10px' }}
+            title="Edit the task"
           >
             <FontAwesomeIcon icon={ faEdit } />
           </Link>
