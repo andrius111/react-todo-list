@@ -28,7 +28,7 @@ const ItensListTasks = (props) => {
 
         <td 
           className="text-right"
-          width="150px"
+          width="140px"
         >
           <FinishTask 
             task={ task }

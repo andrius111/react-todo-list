@@ -20,6 +20,7 @@ body {
 .form-control {
   background-color: var(--gray);
   color: #fff;
+  border: none;
 }
 
 .form-control:focus {
@@ -30,11 +31,19 @@ body {
 .page-link {
   background-color: #474b51;
   color: #fff;
-  border: 1px solid gray;
+  border: none;
 }
 
 .page-item.disabled .page-link {
   background-color: #606873;
   color: gray;
-  border: 1px solid gray;
+  border: none;
+}
+
+.table-dark td, .table-dark th, .table-dark thead th {
+  border: none;
+}
+
+::placeholder {
+  color: #9b9b9b !important;
 }
