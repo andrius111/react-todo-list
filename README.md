@@ -15,5 +15,7 @@ The app has the following features:
 * Pagination
 * Tasks counts
 
-## Example
-![](./public/example.gif)
+## Demo
+<p align="center">
+  <img src="https://raw.githubusercontent.com/andrius111/react-todo-list/master/public/example.gif">
+</p>
