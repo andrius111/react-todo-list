@@ -13,7 +13,7 @@ The app has the following features:
 * Mark a task as finished
 * Search by the task name
 * Pagination
-* Tasks counts
+* Tasks count
 
 ## Demo
 <p align="center">
